@@ -1,5 +1,7 @@
 package com.t0lia.sparky;
 
+import spark.Route;
+
 import static spark.Spark.get;
 
 public class Main {
@@ -7,7 +9,12 @@ public class Main {
     private static final String SND = "snd";
 
     public static void main(String[] args) {
-        get("/hello", (req, res) -> {
+        get("/hello", hello());
+        get("/", (req, res) -> "hello sparky");
+    }
+
+    private static Route hello() {
+        return (req, res) -> {
 
             String fst = req.queryParams(FST);
             String snd = req.queryParams(SND);
@@ -19,7 +26,7 @@ public class Main {
                 return "Params not valid";
             }
 
-        });
+        };
     }
 
 }
