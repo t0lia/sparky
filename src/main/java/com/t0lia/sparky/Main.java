@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
         get("/hello", hello());
-        get("/", (req, res) -> "hello sparky");
+        get("/", (req, res) -> "hello sparky!");
     }
 
     private static Route hello() {
