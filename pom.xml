@@ -27,6 +27,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.sparkjava/spark-template-freemarker -->
+        <dependency>
+            <groupId>com.sparkjava</groupId>
+            <artifactId>spark-template-freemarker</artifactId>
+            <version>2.3</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
@@ -39,7 +46,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.t0lia.sparky.Main</mainClass>
+                            <mainClass>com.t0lia.sparky.starter.Main</mainClass>
                             <classpathPrefix>dependency-jars/</classpathPrefix>
                         </manifest>
                     </archive>
@@ -70,7 +77,7 @@
                             </descriptorRefs>
                             <archive>
                                 <manifest>
-                                    <mainClass>com.t0lia.sparky.Main</mainClass>
+                                    <mainClass>com.t0lia.sparky.starter.Main</mainClass>
                                 </manifest>
                             </archive>
                         </configuration>
