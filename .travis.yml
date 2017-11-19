@@ -6,6 +6,15 @@ services:
 language: java
 jdk: oraclejdk8
 
+addons:
+  ssh_known_hosts: 95.213.204.35
+
+before_deploy:
+  - openssl aes-256-cbc -K $encrypted_<...>_key -iv $encrypted_<...>_iv -in admin.enc -out /tmp/deploy_rsa -d
+  - eval "$(ssh-agent -s)"
+  - chmod 600 /tmp/deploy_rsa
+  - ssh-add /tmp/deploy_rsa
+
 after_success:
   - sh .travis/deploy_dockerhub.sh
-  - sh .travis/deploy_heroku.sh
+  - sh .travis/deploy_vscale.sh
