@@ -1,6 +1,5 @@
-package com.t0lia.sparky;
+package com.t0lia.sparky.helper;
 
-import com.t0lia.sparky.helper.Evaluator;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
