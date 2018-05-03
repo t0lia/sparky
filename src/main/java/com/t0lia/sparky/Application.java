@@ -7,6 +7,7 @@ import freemarker.template.Configuration;
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
+import spark.Spark;
 import spark.template.freemarker.FreeMarkerEngine;
 
 import java.util.HashMap;
@@ -21,6 +22,7 @@ public class Application {
     private FreeMarkerEngine freeMarkerEngine;
 
     public Application() {
+        Spark.staticFileLocation("/public");
         freeMarkerEngine = new FreeMarkerEngine();
         Configuration freeMarkerConfiguration = new Configuration();
         freeMarkerConfiguration.setTemplateLoader(new ClassTemplateLoader(Application.class, "/"));
